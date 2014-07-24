@@ -1,0 +1,7 @@
+<data>
+    <xpath expr="/form/notebook/page[@id='permissions']" position="after">
+        <page string="Wishlist" id="wishlist">
+            <field name="wishlists" />
+        </page>
+    </xpath>
+</data>

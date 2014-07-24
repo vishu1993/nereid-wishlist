@@ -27,6 +27,9 @@ class SQLiteTest(Command):
         pass
 
     def run(self):
+        if self.distribution.tests_require:
+            self.distribution.fetch_build_eggs(self.distribution.tests_require)
+
         from trytond.config import CONFIG
         CONFIG['db_type'] = 'sqlite'
         os.environ['DB_NAME'] = ':memory:'
@@ -54,6 +57,9 @@ class PostgresTest(Command):
         pass
 
     def run(self):
+        if self.distribution.tests_require:
+            self.distribution.fetch_build_eggs(self.distribution.tests_require)
+
         from trytond.config import CONFIG
         CONFIG['db_type'] = 'postgresql'
         CONFIG['db_host'] = 'localhost'
@@ -84,8 +90,8 @@ requires = []
 
 MODULE2PREFIX = {}
 
-MODULE = "nereid_product_wishlist"
-PREFIX = "trytond"
+MODULE = "nereid_wishlist"
+PREFIX = "openlabs"
 for dep in info.get('depends', []):
     if not re.match(r'(ir|res|webdav)(\W|$)', dep):
         requires.append(
@@ -100,6 +106,7 @@ requires.append(
         major_version, minor_version, major_version, minor_version + 1
     )
 )
+
 setup(
     name='%s_%s' % (PREFIX, MODULE),
     version=info.get('version', '0.0.1'),
@@ -138,8 +145,9 @@ setup(
     """ % (MODULE, MODULE),
     test_suite='tests',
     test_loader='trytond.test_loader:Loader',
+    tests_require=['pycountry'],
     cmdclass={
         'test': SQLiteTest,
         'test_on_postgres': PostgresTest,
-    }
+    },
 )

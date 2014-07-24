@@ -6,9 +6,15 @@
     :license: BSD, see LICENSE for more details.
 """
 from trytond.pool import Pool
+from wishlist import NereidUser, Wishlist, Product, \
+    ProductWishlistRelationship
 
 
 def register():
     Pool.register(
-        module='nereid_product_wishlist', type_='model'
+        NereidUser,
+        Wishlist,
+        Product,
+        ProductWishlistRelationship,
+        module='nereid_wishlist', type_='model'
     )

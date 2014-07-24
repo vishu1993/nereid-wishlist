@@ -28,13 +28,13 @@ class TestViewsDepends(unittest.TestCase):
         Set up data used in the tests.
         this method is called before each test function execution.
         """
-        trytond.tests.test_tryton.install_module('nereid_product_wishlist')
+        trytond.tests.test_tryton.install_module('nereid_wishlist')
 
     def test0005views(self):
         '''
         Test views.
         '''
-        test_view('nereid_product_wishlist')
+        test_view('nereid_wishlist')
 
     def test0006depends(self):
         '''
