@@ -1,0 +1,5 @@
+[run]
+source = trytond.modules.nereid_product_wishlist
+
+[report]
+omit = */tests/*, */setup.py
