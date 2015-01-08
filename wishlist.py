@@ -51,7 +51,7 @@ class Wishlist(ModelSQL, ModelView):
     nereid_user = fields.Many2One(
         'nereid.user', 'Nereid User', select=True, required=True
     )
-    name = fields.Char('Name', required=True, select=True, translate=True)
+    name = fields.Char('Name', required=True, select=True)
     products = fields.Many2Many(
         'product.wishlist-product',
         'wishlist', 'product', 'Products',

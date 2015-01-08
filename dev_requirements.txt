@@ -1,6 +1,3 @@
-# Install latest packages from github. This is temporary.
-git+ssh://git@github.com/openlabs/nereid.git@develop
-
 # Install packages from requirements.txt
 -r requirements.txt
 
