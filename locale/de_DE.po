@@ -1,0 +1,91 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:nereid.user,wishlists:"
+msgid "Wishlist"
+msgstr "Wunschliste"
+
+msgctxt "field:product.product,wishlists:"
+msgid "Wishlists"
+msgstr "Wunschlisten"
+
+msgctxt "field:product.wishlist-product,create_date:"
+msgid "Create Date"
+msgstr "Erstellungsdatum"
+
+msgctxt "field:product.wishlist-product,create_uid:"
+msgid "Create User"
+msgstr "Erstellt durch"
+
+msgctxt "field:product.wishlist-product,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:product.wishlist-product,product:"
+msgid "Product"
+msgstr "Artikel"
+
+msgctxt "field:product.wishlist-product,rec_name:"
+msgid "Name"
+msgstr "Name"
+
+msgctxt "field:product.wishlist-product,wishlist:"
+msgid "Wishlist"
+msgstr "Wunschliste"
+
+msgctxt "field:product.wishlist-product,write_date:"
+msgid "Write Date"
+msgstr "Zuletzt geändert"
+
+msgctxt "field:product.wishlist-product,write_uid:"
+msgid "Write User"
+msgstr "Letzte Änderung durch"
+
+msgctxt "field:wishlist.wishlist,create_date:"
+msgid "Create Date"
+msgstr "Erstellungsdatum"
+
+msgctxt "field:wishlist.wishlist,create_uid:"
+msgid "Create User"
+msgstr "Erstellt durch"
+
+msgctxt "field:wishlist.wishlist,id:"
+msgid "ID"
+msgstr "ID"
+
+msgctxt "field:wishlist.wishlist,name:"
+msgid "Name"
+msgstr "Name"
+
+msgctxt "field:wishlist.wishlist,nereid_user:"
+msgid "Nereid User"
+msgstr "Nereid Benutzer"
+
+msgctxt "field:wishlist.wishlist,products:"
+msgid "Products"
+msgstr "Artikel"
+
+msgctxt "field:wishlist.wishlist,rec_name:"
+msgid "Name"
+msgstr "Name"
+
+msgctxt "field:wishlist.wishlist,write_date:"
+msgid "Write Date"
+msgstr "Zuletzt geändert"
+
+msgctxt "field:wishlist.wishlist,write_uid:"
+msgid "Write User"
+msgstr "Letzte Änderung durch"
+
+msgctxt "model:product.wishlist-product,name:"
+msgid "This is the relation between wishlist and a product."
+msgstr "Wunschliste - Variante"
+
+msgctxt "model:wishlist.wishlist,name:"
+msgid "Wishlist"
+msgstr "Wunschliste"
+
+msgctxt "view:nereid.user:"
+msgid "Wishlist"
+msgstr "Wunschliste"
