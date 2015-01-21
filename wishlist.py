@@ -135,7 +135,8 @@ class Wishlist(ModelSQL, ModelView):
                 return redirect(request.referrer)
 
             else:
-                self.write([self], {'name': name})
+                self.name = name
+                self.save()
                 flash(_('Changed name of wishlist to %(name)s.', name=name))
             if request.is_xhr:
                 return 'success', 200
