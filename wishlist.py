@@ -10,7 +10,11 @@ from trytond.pool import PoolMeta, Pool
 from trytond.model import ModelView, ModelSQL, fields
 from nereid import login_required, current_user, request, \
     redirect, url_for, render_template, route, abort, flash
+from nereid.contrib.locale import make_lazy_gettext
 from wtforms import ValidationError
+
+_ = make_lazy_gettext('nereid-wishlist')
+
 
 __all__ = [
     'NereidUser', 'Wishlist', 'Product',
@@ -51,7 +55,7 @@ class Wishlist(ModelSQL, ModelView):
     nereid_user = fields.Many2One(
         'nereid.user', 'Nereid User', select=True, required=True
     )
-    name = fields.Char('Name', required=True, select=True, translate=True)
+    name = fields.Char('Name', required=True, select=True)
     products = fields.Many2Many(
         'product.wishlist-product',
         'wishlist', 'product', 'Products',
@@ -122,12 +126,18 @@ class Wishlist(ModelSQL, ModelView):
                 ('name', '=', name),
             ], limit=1)
             if wishlist:
-                flash('Wishlist with name: ' + name + ' already exists.')
+                flash(
+                    _(
+                        'Wishlist with name: %(name)s already exists.',
+                        name=name
+                    )
+                )
                 return redirect(request.referrer)
 
             else:
-                self.write([self], {'name': name})
-                flash('Changed name of wishlist to ' + name + '.')
+                self.name = name
+                self.save()
+                flash(_('Changed name of wishlist to %(name)s.', name=name))
             if request.is_xhr:
                 return 'success', 200
 
