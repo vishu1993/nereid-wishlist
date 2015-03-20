@@ -2,4 +2,4 @@
 source = trytond.modules.nereid_product_wishlist
 
 [report]
-omit = */tests/*, */setup.py
+omit = */tests/*, */setup.py, */fabfile.py
